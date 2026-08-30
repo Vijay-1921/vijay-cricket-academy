@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Vijay Cricket Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item-box {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--accent-gold);
+        }
+        .gallery-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-desc {
+            padding: 12px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--primary-blue);
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🏏 VIJAY CRICKET ACADEMY</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="programs.html">Programs</a>
+            <a href="coaches.html">Coaches</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="section-title">Academy Moments</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item-box">
+                <img src="images/gallery1.jpeg" alt="Net Practice Session" class="gallery-photo" onerror="this.src='images/home-poster.png'">
+                <div class="gallery-desc">Morning Net Drill Session
+                    outdoor cricket practice with focus on batting and bowling techniques, emphasizing skill development and teamwork.
+                </div>
+            </div>
+            <div class="gallery-item-box">
+                <img src="images/gallery2.jpeg" alt="Team Huddle" class="gallery-photo" onerror="this.src='images/home-poster.png'">
+                <div class="gallery-desc">Team Huddle Before Match
+                    team strategy discussion and motivational pep talk, fostering unity and focus before competitive play.
+                </div>
+            </div>
+            <div class="gallery-item-box">
+                <img src="images/gallery3.jpeg" alt="Fitness Training Camp" class="gallery-photo" onerror="this.src='images/home-poster.png'">
+                <div class="gallery-desc">Fitness Center Gym
+                    strength and conditioning training, emphasizing endurance,and overall athletic performance enhancement for cricket players.
+                </div>
+            </div>
+            <div class="gallery-item-box">
+                <img src="images/gallery4.jpeg" alt="Fielding Drills" class="gallery-photo" onerror="this.src='images/home-poster.png'">
+                <div class="gallery-desc">Fielding Drills
+                    players lined up for intensive fielding practice, focusing on agility, catching, to improve defencive skills and on-fielding performance.
+                </div>
+            </div>
+            <div class="gallery-item-box">
+                <img src="images/gallery5.jpeg" alt="Coaching Seminar" class="gallery-photo" onerror="this.src='images/home-poster.png'">
+                <div class="gallery-desc">Interactive Technical Strategy Briefing</div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

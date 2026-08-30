@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programs | Vijay Cricket Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #222222;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #0d233a;
+            border-bottom: 3px solid #cca43b;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 8%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #d4af37;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            height: 500px;
+
+            background: #ffffff;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 8%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .small-title {
+            color: #0d233a;
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            color: #0d233a;
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #0d233a;
+        }
+
+        .hero p {
+            color: #0d233a;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .program-section {
+            padding: 90px 8%;
+            background: #ffffff;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .heading h2 {
+            color: #0d233a;
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .heading p {
+            color: #0d233a;
+            font-size: 16px;
+        }
+
+
+        /* ================= CARDS ================= */
+
+        .program-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .program-card {
+
+            background: #fbf5f5;
+
+            border: 1px solid #292929;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            transition: 0.35s;
+        }
+
+        .program-card:hover {
+
+            transform: translateY(-10px);
+
+            border-color: #d4af37;
+
+            box-shadow:
+                0 15px 45px
+                rgba(212,175,55,0.15);
+        }
+
+        .program-card img {
+
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .card-content {
+
+            padding: 28px;
+        }
+
+        .card-content h3 {
+
+            color: #0d233a;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+        .card-content p {
+
+            color: #0d233a;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+        .card-content ul {
+
+            list-style: none;
+
+            margin-bottom: 25px;
+        }
+
+        .card-content li {
+
+            color: #0d233a;
+
+            padding: 8px 0;
+        }
+
+        .card-content li::before {
+
+            content: "✓";
+
+            color: #0d233a;
+
+            font-weight: bold;
+
+            margin-right: 10px;
+        }
+
+        .button {
+
+            display: inline-block;
+
+            background: #d4af37;
+
+            color: #0d233a;
+
+            text-decoration: none;
+
+            padding: 12px 22px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+
+            background: white;
+        }
+
+
+        /* ================= DEVELOPMENT ================= */
+
+        .development {
+
+            background: #f5f1f1;
+
+            padding: 90px 8%;
+        }
+
+        .development-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .development-box {
+
+            background: #f8f5f5;
+
+            border: 1px solid #292929;
+
+            padding: 35px 22px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .development-box:hover {
+
+            border-color: #d4af37;
+        }
+
+        .number {
+
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #d4af37;
+
+            color: #080808;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .development-box h3 {
+
+            margin-bottom: 12px;
+
+            color: white;
+        }
+
+        .development-box p {
+
+            color: #999999;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            padding: 90px 20px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(240, 237, 237, 0.85),
+                    rgba(252, 249, 249, 0.95)
+                ),
+                url("images/programs-banner.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .cta h2 {
+
+            color: #d4af37;
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+
+            color: #cccccc;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #0d233a;
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: white;
+
+            border-top: 1px solid #222222;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 900px) {
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .development-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media(max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 5px 8px;
+                display: inline-block;
+            }
+        }
+
+
+        @media(max-width: 550px) {
+
+            .hero {
+                height: 430px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .development-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .heading h2 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        🏏 VIJAY CRICKET ACADEMY
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="programs.html" class="active">
+            Programs
+        </a>
+
+        <a href="coaches.html">
+            Coaches
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="facilities.html">
+            Facilities
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Vijay Cricket Academy
+        </div>
+
+        <h1>
+            Train Hard.
+            <span>Play Better.</span>
+        </h1>
+
+        <p>
+            Structured cricket programs designed to develop
+            technical skills, fitness, confidence and match
+            performance at every stage of a player's journey.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROGRAMS ================= -->
+
+<section class="program-section">
+
+    <div class="heading">
+
+        <h2>
+            Our Programs
+        </h2>
+
+        <p>
+            Training pathways designed for every aspiring cricketer.
+        </p>
+
+    </div>
+
+
+    <div class="program-grid">
+
+
+        <!-- GROUP -->
+
+        <div class="program-card">
+
+            <img
+                src="images/group-coaching.jpeg"
+                alt="Group Cricket Coaching"
+            >
+
+            <div class="card-content">
+
+                <h3>
+                    Group Coaching
+                </h3>
+
+                <p>
+                    Build strong cricket fundamentals through
+                    structured group sessions, practical drills
+                    and regular match preparation.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Batting fundamentals
+                    </li>
+
+                    <li>
+                        Bowling fundamentals
+                    </li>
+
+                    <li>
+                        Fielding drills
+                    </li>
+
+                    <li>
+                        Fitness training
+                    </li>
+
+                    <li>
+                        Net practice
+                    </li>
+
+                </ul>
+
+                <a
+                    href="contact.html"
+                    class="button"
+                >
+                    Join Program
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOCUSED -->
+
+        <div class="program-card">
+
+            <img
+                src="images/focused-coaching.jpeg"
+                alt="Focused Cricket Coaching"
+            >
+
+            <div class="card-content">
+
+                <h3>
+                    Focused Coaching
+                </h3>
+
+                <p>
+                    Smaller training groups with greater individual
+                    attention to identify weaknesses and improve
+                    specific cricketing skills.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Individual skill development
+                    </li>
+
+                    <li>
+                        Batting correction
+                    </li>
+
+                    <li>
+                        Bowling correction
+                    </li>
+
+                    <li>
+                        Video-based feedback
+                    </li>
+
+                    <li>
+                        Personal development plan
+                    </li>
+
+                </ul>
+
+                <a
+                    href="contact.html"
+                    class="button"
+                >
+                    Join Program
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HIGH PERFORMANCE -->
+
+        <div class="program-card">
+
+            <img
+                src="images/high-performance.jpeg"
+                alt="High Performance Cricket Training"
+            >
+
+            <div class="card-content">
+
+                <h3>
+                    High Performance
+                </h3>
+
+                <p>
+                    Intensive training for competitive players
+                    preparing for district, state and higher-level
+                    cricket.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Advanced skill training
+                    </li>
+
+                    <li>
+                        Fitness assessment
+                    </li>
+
+                    <li>
+                        Strength & conditioning
+                    </li>
+
+                    <li>
+                        Match simulation
+                    </li>
+
+                    <li>
+                        Performance analysis
+                    </li>
+
+                </ul>
+
+                <a
+                    href="contact.html"
+                    class="button"
+                >
+                    Join Program
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PLAYER PATH ================= -->
+
+<section class="development">
+
+    <div class="heading">
+
+        <h2>
+            Player Development Path
+        </h2>
+
+        <p>
+            A structured journey from learning the basics
+            to competitive cricket.
+        </p>
+
+    </div>
+
+
+    <div class="development-grid">
+
+
+        <div class="development-box">
+
+            <div class="number">
+                01
+            </div>
+
+            <h3>
+                Foundation
+            </h3>
+
+            <p>
+                Learn basic cricket techniques, movement,
+                coordination and game awareness.
+            </p>
+
+        </div>
+
+
+
+        <div class="development-box">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                Development
+            </h3>
+
+            <p>
+                Build stronger batting, bowling, fielding
+                and fitness skills.
+            </p>
+
+        </div>
+
+
+
+        <div class="development-box">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                Performance
+            </h3>
+
+            <p>
+                Advanced training, match simulations and
+                performance improvement.
+            </p>
+
+        </div>
+
+
+
+        <div class="development-box">
+
+            <div class="number">
+                04
+            </div>
+
+            <h3>
+                Competition
+            </h3>
+
+            <p>
+                Prepare for competitive matches, trials,
+                tournaments and higher levels.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        Ready to Improve Your Game?
+    </h2>
+
+    <p>
+        Begin your cricket journey with Vijay Cricket Academy.
+    </p>
+
+    <a
+        href="contact.html"
+        class="button"
+    >
+        Contact Academy
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Vijay Cricket Academy.
+    All Rights Reserved.
+
+</footer>
+
+
+</body>
+</html>

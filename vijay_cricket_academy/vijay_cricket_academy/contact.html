@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Vijay Cricket Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #0d233a;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0d233a;
+      border-bottom: 2px solid #d4af37;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: #d4af37;
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #d4af37;
+    }
+
+    .hero {
+      min-height: 330px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      color: #0d233a;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #0d233a;
+      font-size: 18px;
+    }
+
+    .contact-section {
+      padding: 70px 7%;
+    }
+
+    .contact-container {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 45px;
+    }
+
+    .contact-info,
+    .contact-form {
+      background: #ffffff;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    }
+
+    .section-title {
+      color: #0d233a;
+      font-size: 28px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+      align-items: flex-start;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #d4af37;
+      color: #0d233a;
+      border-radius: 50%;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .info-item h3 {
+      color: #0d233a;
+      margin-bottom: 4px;
+      font-size: 17px;
+    }
+
+    .info-item p,
+    .info-item a {
+      color: #0d233a;
+      text-decoration: none;
+    }
+
+    .info-item a:hover {
+      color: #d4af37;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    label {
+      color: #0d233a;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      margin-top: 7px;
+      padding: 14px 16px;
+      background: #ffffff;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #0d233a;
+      outline: none;
+      font-size: 15px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #d4af37;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      background: #d4af37;
+      color: #0d233a;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    button:hover {
+      background: #f0cf58;
+      transform: translateY(-2px);
+    }
+
+    .map-box {
+      max-width: 1150px;
+      margin: 45px auto 0;
+      min-height: 260px;
+      border-radius: 15px;
+      border: 1px solid #292929;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .map-box h2 {
+      color: #0d233a;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #0d233a;
+      border-top: 1px solid #222;
+      text-align: center;
+      padding: 25px 15px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #d4af37;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-section {
+        padding: 45px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Vijay Cricket Academy</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Contact Us</h1>
+      <p>Start your cricket journey with Vijay Cricket Academy.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+
+    <div class="contact-container">
+
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+        <h2 class="section-title">Get In Touch</h2>
+
+        <div class="info-item">
+          <div class="icon">📍</div>
+          <div>
+            <h3>Academy Address</h3>
+            <p>
+              Vijay Cricket Academy<br>
+              Andhra Pradesh, India
+            </p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">☎</div>
+          <div>
+            <h3>Phone</h3>
+            <p>
+              <a href="tel:+919999999999">
+                +91 99999 99999
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">✉</div>
+          <div>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:info@vijaycricketacademy.com">
+                info@vijaycricketacademy.com
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">⏰</div>
+          <div>
+            <h3>Training Hours</h3>
+            <p>
+              Monday - Saturday<br>
+              6:00 AM - 9:00 AM<br>
+              4:00 PM - 7:00 PM
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form">
+        <h2 class="section-title">Send Us A Message</h2>
+
+        <form onsubmit="sendMessage(event)">
+
+          <label>
+            Full Name
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required
+            >
+          </label>
+
+          <label>
+            Phone Number
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Enter your phone number"
+              required
+            >
+          </label>
+
+          <label>
+            Email Address
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            >
+          </label>
+
+          <label>
+            Interested Program
+            <select id="program">
+              <option value="">Select a program</option>
+              <option>Beginner Cricket Training</option>
+              <option>Junior Cricket Academy</option>
+              <option>Advanced Training</option>
+              <option>Professional Coaching</option>
+              <option>Individual Training</option>
+            </select>
+          </label>
+
+          <label>
+            Message
+            <textarea
+              id="message"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+          </label>
+
+          <button type="submit">SEND MESSAGE</button>
+
+        </form>
+      </div>
+
+    </div>
+
+    <!-- LOCATION -->
+    <div class="map-box">
+      <div>
+        <h2>Visit Vijay Cricket Academy</h2>
+        <p>
+          Come and meet our coaching team and explore our cricket
+          training facilities.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 <span>Vijay Cricket Academy</span>. All Rights Reserved.
+  </footer>
+
+  <script>
+    function sendMessage(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const program = document.getElementById("program").value;
+      const message = document.getElementById("message").value;
+
+      const subject = encodeURIComponent(
+        "New Enquiry - Vijay Cricket Academy"
+      );
+
+      const body = encodeURIComponent(
+        "Name: " + name +
+        "\nPhone: " + phone +
+        "\nEmail: " + email +
+        "\nProgram: " + program +
+        "\n\nMessage:\n" + message
+      );
+
+      window.location.href =
+        "mailto:info@vijaycricketacademy.com?subject=" +
+        subject +
+        "&body=" +
+        body;
+    }
+  </script>
+
+</body>
+</html>
